@@ -3,7 +3,7 @@
 var app = angular.module('trainer', []);
 
 //controller that use a *PhoneService to separate concerns
-var GetDataController = function($scope, PhoneService){
+app.controller('PhoneController', ['$scope','PhoneService',function($scope, PhoneService){
 	
 	
 	var onSuccess = function(response) {
@@ -15,12 +15,14 @@ var GetDataController = function($scope, PhoneService){
 	
 	
 	PhoneService.myCall().then(onSuccess, onError);
-}
+}]);
 
-var PhoneDetailController = function($scope){
+app.controller('DetailController', ['$scope', function($scope){
 	
 	
-}
+}]);
 
-app.controller('DetailController', PhoneDetailController);
-app.controller('PhoneController', GetDataController);
+$(document).ready(function(){
+	$("#detailPhone").hide();
+	
+});
