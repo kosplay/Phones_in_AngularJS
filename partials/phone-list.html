@@ -1,0 +1,17 @@
+<div class="col-md-3 col-xs-12 indexPhones" ng-repeat="phone in phones" >
+	<a href='#/phones/{{phone.id}}'>
+	<div class="row">
+		<div class="col-md-6 col-xs-8">
+			<div class="row">
+				<img class="col-md-12 col-xs-10 indexImg" ng-src="{{phone.imageUrl}}" />
+			</div>
+			<div class="row">
+				<h3 class="col-md-12 col-xs-12 indexNames">{{phone.name}}</h3>
+			</div>
+		</div>
+		<div class="col-md-6 col-xs-4">
+			<p>{{phone.snippet}}</p>
+		</div>
+	</div>
+	</a>
+</div>

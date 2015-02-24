@@ -32,14 +32,15 @@
   
   <script src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
-  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.13/angular.min.js"></script>
-  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.13/angular-route.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.13/angular.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.13/angular-route.js"></script>
   <script src="phones.js"></script>
   <script src="phoneService.js"></script>
+  <script src="detailService.js"></script>
   
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 </head>
-<body ng-app="trainer">
+<body ng-app="phonecatApp">
 
 <nav class="navbar navbar-default" role="navigation">
 	<div class="container">
@@ -66,184 +67,9 @@
 </nav>
 
 <div class="container">
-	<div class="row" ng-controller="PhoneController">
-		<div class="col-md-3 col-xs-12 indexPhones" ng-repeat="phone in phones" >
-			<div class="row">
-				<div class="col-md-6 col-xs-8">
-					<div class="row">
-						<img class="col-md-12 col-xs-10 indexImg" ng-src="{{phone.imageUrl}}" />
-					</div>
-					<div class="row">
-						<h3 class="col-md-12 col-xs-12 indexNames">{{phone.name}}</h3>
-					</div>
-				</div>
-				<div class="col-md-6 col-xs-4">
-					<p>{{phone.snippet}}</p>
-				</div>
-			</div>
-		</div>
+	<div class="row">
+		<div ng-view></div>
 	</div>
-	
-	<div class="col-md-12" id="detailPhone" ng-controller="DetailController">
-	
-		<div class="row">
-			<div>Name:</div>
-			<div>{{name}}</div>
-		</div>
-		<div class="row">
-			<div>Additional Features:</div>
-			<div>{{additionalFeatures}}</div>
-		</div>
-		<div class="row">
-			<div class="col-md-4">Android:</div>
-			<div class="col-md-8">
-				<div class="row">
-					<div class="col-md-4">OS:</div>
-					<div class="col-md-8">{{availability.os}}</div>
-				<div>
-				<div class="row">
-					<div class="col-md-4">UI:</div>
-					<div class="col-md-8">{{availability.ui}}</div>
-				<div>
-			</div>
-		</div>
-		<div class="row">
-			<div class="col-md-4">Size And Weight:</div>
-			<div class="col-md-8">
-				<div class="row">
-					<div class="col-md-4">Dimensions:</div>
-					<div class="col-md-8">{{sizeAndWeight.dimensions}}</div>
-				<div>
-				<div class="row">
-					<div class="col-md-4">UI:</div>
-					<div class="col-md-8">{{sizeAndWeight.weight}}</div>
-				<div>
-			</div>
-		</div>
-		<div class="row">
-			<div class="col-md-4">Storage:</div>
-			<div class="col-md-8">
-				<div class="row">
-					<div class="col-md-4">Flash:</div>
-					<div class="col-md-8">{{storage.flash}}</div>
-				<div>
-				<div class="row">
-					<div class="col-md-4">RAM:</div>
-					<div class="col-md-8">{{storage.ram}}</div>
-				<div>
-			</div>
-		</div>
-		<div class="row">
-			<div>Availability:</div>
-			<div>{{availability}}</div>
-		</div>
-		<div class="row">
-			<div class="col-md-4">Battery:</div>
-			<div class="col-md-8">
-				<div class="row">
-					<div class="col-md-4">Standby Time:</div>
-					<div class="col-md-8">{{battery.standbyTime}}</div>
-				<div>
-				<div class="row">
-					<div class="col-md-4">Talk Time:</div>
-					<div class="col-md-8">{{battery.talkTime}}</div>
-				<div>
-				<div class="row">
-					<div class="col-md-4">Type:</div>
-					<div class="col-md-8">{{battery.type}}</div>
-				<div>
-			</div>
-		</div>
-		<div class="row">
-			<div class="col-md-4">Camera:</div>
-			<div class="col-md-8">
-				<div class="row">
-					<div class="col-md-4">Features:</div>
-					<div class="col-md-8">{{camera.features}}</div>
-				<div>
-				<div class="row">
-					<div class="col-md-4">Primary:</div>
-					<div class="col-md-8">{{camera.primary}}</div>
-				<div>
-			</div>
-		</div>
-		<div class="row">
-			<div class="col-md-4">Connectivity:</div>
-			<div class="col-md-8">
-				<div class="row">
-					<div class="col-md-4">Bluetooth:</div>
-					<div class="col-md-8">{{connectivity.bluetooth}}</div>
-				<div>
-				<div class="row">
-					<div class="col-md-4">Cell:</div>
-					<div class="col-md-8">{{connectivity.cell}}</div>
-				<div>
-				<div class="row">
-					<div class="col-md-4">GPS:</div>
-					<div class="col-md-8">{{connectivity.gps}}</div>
-				<div>
-				<div class="row">
-					<div class="col-md-4">Infrared:</div>
-					<div class="col-md-8">{{connectivity.infrared}}</div>
-				<div>
-				<div class="row">
-					<div class="col-md-4">WiFi:</div>
-					<div class="col-md-8">{{connectivity.wifi}}</div>
-				<div>
-			</div>
-		</div>
-		<div class="row">
-			<div>Description:</div>
-			<div>{{description}}</div>
-		</div>
-		<div class="row">
-			<div class="col-md-4">Display:</div>
-			<div class="col-md-8">
-				<div class="row">
-					<div class="col-md-4">Screen Resolution:</div>
-					<div class="col-md-8">{{display.screenResolution}}</div>
-				<div>
-				<div class="row">
-					<div class="col-md-4">Screen Size:</div>
-					<div class="col-md-8">{{display.screenSize}}</div>
-				<div>
-				<div class="row">
-					<div class="col-md-4">Touch Screen:</div>
-					<div class="col-md-8">{{display.touchScreen}}</div>
-				<div>
-			</div>
-		</div>
-		
-		<div class="row">
-			<div class="col-md-4">Hardware:</div>
-			<div class="col-md-8">
-				<div class="row">
-					<div class="col-md-4">Accelerometer:</div>
-					<div class="col-md-8">{{hardware.accelerometer}}</div>
-				<div>
-				<div class="row">
-					<div class="col-md-4">AudioJack:</div>
-					<div class="col-md-8">{{hardware.audioJack}}</div>
-				<div>
-				<div class="row">
-					<div class="col-md-4">CPU:</div>
-					<div class="col-md-8">{{hardware.cpu}}</div>
-				<div>
-				<div class="row">
-					<div class="col-md-4">FM Radio:</div>
-					<div class="col-md-8">{{hardware.rmRadio}}</div>
-				<div>
-				<div class="row">
-					<div class="col-md-4">Physical Keyboard:</div>
-					<div class="col-md-8">{{hardware.physicalKeyboard}}</div>
-				<div>
-				<div class="row">
-					<div class="col-md-4">USB:</div>
-					<div class="col-md-8">{{hardware.usb}}</div>
-				<div>
-			</div>
-		</div>
-	<div>
 </div>
 
 </body>

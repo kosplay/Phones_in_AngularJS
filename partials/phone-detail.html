@@ -1,0 +1,160 @@
+<div class="col-md-12" id="detailPhone">
+	
+		<div class="row">
+			<div class="col-md-4">Name:</div>
+			<div class="col-md-8">{{thisPhone.name}}</div>
+		</div>
+		<div class="row">
+			<div class="col-md-4">Additional Features:</div>
+			<div class="col-md-8">{{thisPhone.additionalFeatures}}</div>
+		</div>
+		<div class="row">
+			<div class="col-md-4">Android:</div>
+			<div class="col-md-8">
+				<div class="row">
+					<div class="col-md-4">OS:</div>
+					<div class="col-md-8">{{thisPhone.android.os}}</div>
+				</div>
+				<div class="row">
+					<div class="col-md-4">UI:</div>
+					<div class="col-md-8">{{thisPhone.android.ui}}</div>
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-4">Size And Weight:</div>
+			<div class="col-md-8">
+				<div class="row">
+					<div class="col-md-4">Dimensions:</div>
+					<div class="col-md-8"><span ng-repeat='di in thisPhone.sizeAndWeight.dimensions'>{{di}}; </span></div>
+				</div>
+				<div class="row">
+					<div class="col-md-4">UI:</div>
+					<div class="col-md-8">{{thisPhone.sizeAndWeight.weight}}</div>
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-4">Storage:</div>
+			<div class="col-md-8">
+				<div class="row">
+					<div class="col-md-4">Flash:</div>
+					<div class="col-md-8">{{thisPhone.storage.flash}}</div>
+				</div>
+				<div class="row">
+					<div class="col-md-4">RAM:</div>
+					<div class="col-md-8">{{thisPhone.storage.ram}}</div>
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-4">Availability:</div>
+			<div class="col-md-4">{{thisPhone.availability}}</div>
+		</div>
+		<div class="row">
+			<div class="col-md-4">Battery:</div>
+			<div class="col-md-8">
+				<div class="row">
+					<div class="col-md-4">Standby Time:</div>
+					<div class="col-md-8">{{thisPhone.battery.standbyTime}}</div>
+				</div>
+				<div class="row">
+					<div class="col-md-4">Talk Time:</div>
+					<div class="col-md-8">{{thisPhone.battery.talkTime}}</div>
+				</div>
+				<div class="row">
+					<div class="col-md-4">Type:</div>
+					<div class="col-md-8">{{thisPhone.battery.type}}</div>
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-4">Camera:</div>
+			<div class="col-md-8">
+				<div class="row">
+					<div class="col-md-4">Features:</div>
+					<div class="col-md-8">{{thisPhone.camera.features}}</div>
+				</div>
+				<div class="row">
+					<div class="col-md-4">Primary:</div>
+					<div class="col-md-8">{{thisPhone.camera.primary}}</div>
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-4">Connectivity:</div>
+			<div class="col-md-8">
+				<div class="row">
+					<div class="col-md-4">Bluetooth:</div>
+					<div class="col-md-8">{{thisPhone.connectivity.bluetooth}}</div>
+				</div>
+				<div class="row">
+					<div class="col-md-4">Cell:</div>
+					<div class="col-md-8">{{thisPhone.connectivity.cell}}</div>
+				</div>
+				<div class="row">
+					<div class="col-md-4">GPS:</div>
+					<div class="col-md-8">{{thisPhone.connectivity.gps}}</div>
+				</div>
+				<div class="row">
+					<div class="col-md-4">Infrared:</div>
+					<div class="col-md-8">{{thisPhone.connectivity.infrared}}</div>
+				</div>
+				<div class="row">
+					<div class="col-md-4">WiFi:</div>
+					<div class="col-md-8">{{thisPhone.connectivity.wifi}}</div>
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<div  class="col-md-4">Description:</div>
+			<div  class="col-md-8">{{thisPhone.description}}</div>
+		</div>
+		<div class="row">
+			<div class="col-md-4">Display:</div>
+			<div class="col-md-8">
+				<div class="row">
+					<div class="col-md-4">Screen Resolution:</div>
+					<div class="col-md-8">{{thisPhone.display.screenResolution}}</div>
+				</div>
+				<div class="row">
+					<div class="col-md-4">Screen Size:</div>
+					<div class="col-md-8">{{thisPhone.display.screenSize}}</div>
+				</div>
+				<div class="row">
+					<div class="col-md-4">Touch Screen:</div>
+					<div class="col-md-8">{{thisPhone.display.touchScreen}}</div>
+				</div>
+			</div>
+		</div>
+		
+		<div class="row">
+			<div class="col-md-4">Hardware:</div>
+			<div class="col-md-8">
+				<div class="row">
+					<div class="col-md-4">Accelerometer:</div>
+					<div class="col-md-8">{{thisPhone.hardware.accelerometer}}</div>
+				</div>
+				<div class="row">
+					<div class="col-md-4">AudioJack:</div>
+					<div class="col-md-8">{{thisPhone.hardware.audioJack}}</div>
+				</div>
+				<div class="row">
+					<div class="col-md-4">CPU:</div>
+					<div class="col-md-8">{{thisPhone.hardware.cpu}}</div>
+				</div>
+				<div class="row">
+					<div class="col-md-4">FM Radio:</div>
+					<div class="col-md-8">{{thisPhone.hardware.rmRadio}}</div>
+				</div>
+				<div class="row">
+					<div class="col-md-4">Physical Keyboard:</div>
+					<div class="col-md-8">{{thisPhone.hardware.physicalKeyboard}}</div>
+				</div>
+				<div class="row">
+					<div class="col-md-4">USB:</div>
+					<div class="col-md-8">{{thisPhone.hardware.usb}}</div>
+				</div>
+			</div>
+		</div>
+	<div>
