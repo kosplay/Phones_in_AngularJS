@@ -33,6 +33,7 @@
   <script src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.13/angular.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.13/angular-route.min.js"></script>
   <script src="phones.js"></script>
   <script src="phoneService.js"></script>
   
@@ -42,7 +43,7 @@
 
 <nav class="navbar navbar-default" role="navigation">
 	<div class="container">
-		<div class="col-md-10 col-md-offset-1 col-xs-12">
+		<div class="col-xs-12">
    <div class="navbar-header">
       <button type="button" class="navbar-toggle" data-toggle="collapse" 
          data-target="#example-navbar-collapse">
@@ -60,12 +61,13 @@
          <li><a href="#">Discuss</a></li>
       </ul>
    </div>
+		</div>
 	</div>
 </nav>
 
 <div class="container">
 	<div class="row" ng-controller="PhoneController">
-		<div class="col-md-3 col-xs-12 indexPhones" ng-repeat="phone in phones">
+		<div class="col-md-3 col-xs-12 indexPhones" ng-repeat="phone in phones" >
 			<div class="row">
 				<div class="col-md-6 col-xs-8">
 					<div class="row">
