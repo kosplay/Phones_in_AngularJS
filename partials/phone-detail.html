@@ -1,8 +1,20 @@
 <div class="col-md-12" id="detailPhone">
 	
 		<div class="row">
-			<div class="col-md-4">Name:</div>
-			<div class="col-md-8">{{thisPhone.name}}</div>
+			<div class="col-md-12">
+				<img class='big-img' ng-src='{{thisPhone.images[0]}}'/>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-12">
+				<span ng-repeat='thisImg in thisPhone.images'>
+					<img class="phone-thumbs" ng-src='{{thisImg}}'/>
+				</span>
+			</div>
+		</div>
+		<div class="row">
+			<h1>{{thisPhone.name}}</h1>
+			<h1><small>{{thisPhone.description}}</small></h1>
 		</div>
 		<div class="row">
 			<div class="col-md-4">Additional Features:</div>
@@ -105,10 +117,6 @@
 					<div class="col-md-8">{{thisPhone.connectivity.wifi}}</div>
 				</div>
 			</div>
-		</div>
-		<div class="row">
-			<div  class="col-md-4">Description:</div>
-			<div  class="col-md-8">{{thisPhone.description}}</div>
 		</div>
 		<div class="row">
 			<div class="col-md-4">Display:</div>
