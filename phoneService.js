@@ -1,4 +1,4 @@
-//business logic: PhoneService
+//business logic: PhoneService, as an Angular factory, which essentially is JS Revealing Moduler Pattern (https://carldanley.com/js-revealing-module-pattern/)
 (function(){
 
 	var module = angular.module("trainer");
