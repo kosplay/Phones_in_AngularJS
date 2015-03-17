@@ -1,5 +1,5 @@
 //angularJS app module, use ng-Route and ng-view to navigate between pages
-var phonecatApp = angular.module('phonecatApp',['ngRoute','trainer']);
+var phonecatApp = angular.module('phonecatApp',['ngRoute','trainer', 'ui.bootstrap']);
 phonecatApp.config(['$routeProvider', function($routeProvider){
 	$routeProvider.
 	when('/phones', {
@@ -15,6 +15,9 @@ phonecatApp.config(['$routeProvider', function($routeProvider){
 	});
 }]);
 
+phonecatApp.controller('NavController', ['$scope', function($scope){
+	$scope.navCollapsed = true;
+}]);
 
 //a module to specify behaviour of controllers. Separate from phonecatApp.
 var phoneCtl = angular.module('trainer', []);
