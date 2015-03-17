@@ -1,32 +1,4 @@
-//angularJS app module
-
-var phoneCtl = angular.module('trainer', []);
-
-//controller that use a *PhoneService to separate concerns
-phoneCtl.controller('PhoneController', ['$scope','PhoneService',function($scope, PhoneService){
-	
-	
-	var onSuccess = function(response) {
-		$scope.phones = response;
-	};
-	var onError = function(reason) {
-		$scope.message = reason;
-	};
-	
-	
-	PhoneService.myCall().then(onSuccess, onError);
-}]);
-
-phoneCtl.controller('DetailController', ['$scope', 'DetailService','$routeParams', function($scope, DetailService, $routeParams){
-	
-	DetailService.getDetails($routeParams.phoneId).then(function(response){
-		
-		$scope.thisPhone = response;
-		console.log($scope.thisPhone);
-	});
-	
-}]);
-
+//angularJS app module, use ng-Route and ng-view to navigate between pages
 var phonecatApp = angular.module('phonecatApp',['ngRoute','trainer']);
 phonecatApp.config(['$routeProvider', function($routeProvider){
 	$routeProvider.
@@ -43,7 +15,33 @@ phonecatApp.config(['$routeProvider', function($routeProvider){
 	});
 }]);
 
-$(document).ready(function(){
-	$("#detailPhone").hide();
+
+//a module to specify behaviour of controllers. Separate from phonecatApp.
+var phoneCtl = angular.module('trainer', []);
+
+//category page controller that use a *PhoneService to separate concerns
+phoneCtl.controller('PhoneController', ['$scope','PhoneService',function($scope, PhoneService){
 	
-});
+	
+	var onSuccess = function(response) {
+		$scope.phones = response;
+	};
+	var onError = function(reason) {
+		$scope.message = reason;
+	};
+	
+	
+	PhoneService.myCall().then(onSuccess, onError);
+}]);
+
+//detail page controller which uses a *DetailService to separate concerns
+phoneCtl.controller('DetailController', ['$scope', 'DetailService','$routeParams', function($scope, DetailService, $routeParams){
+	
+	DetailService.getDetails($routeParams.phoneId).then(function(response){
+		
+		$scope.thisPhone = response;
+		console.log($scope.thisPhone);
+	});
+	
+}]);
+
